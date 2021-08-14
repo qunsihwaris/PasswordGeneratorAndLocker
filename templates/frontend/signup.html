@@ -1,0 +1,31 @@
+{% extends 'frontend/base.html' %}
+
+
+{% block content %}
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    {% for a in form %}
+    {{ a.label }}
+    {{ a }}
+    {{ a.error }}
+    <br>
+    {% endfor %}
+    <input type="submit" value="Submit">
+
+</form>
+<br>
+<hr>
+<p>
+{% if messages %}
+{% for a in messages %}
+{{ a }}
+{% endfor %}
+{% endif %}
+</p>
+<a href="{% url 'login_page' %}" class="btn btn-dark">Log in</a>
+
+
+
+
+{% endblock %}

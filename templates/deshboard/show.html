@@ -1,0 +1,28 @@
+{% extends 'deshboard/deshboard.html' %}
+
+
+
+{% block show %}
+<div class="container-fluid mt-3" >
+<table class="table table-striped table-light table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">APP/Email</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for a in data %}
+      <tr>
+        <th scope="row">{{ a.pk }}</th>
+        <td>{{ a.app }}</td>
+        <td>{{ a.password }}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
